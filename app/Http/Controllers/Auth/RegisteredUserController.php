@@ -24,6 +24,16 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
+    public function createDonator(): View
+    {
+        return view('auth.register-donator');
+    }
+
+    public function createDistributor(): View
+    {
+        return view('auth.register-distributor');
+    }
+
     /**
      * Handle an incoming registration request.
      *
@@ -77,10 +87,6 @@ class RegisteredUserController extends Controller
             }
         }
 
-        event(new Registered($user));
-
-        Auth::login($user);
-
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('login'))->with('msg', 'Request sent successfully. You will be informed when your account is activated');
     }
 }
