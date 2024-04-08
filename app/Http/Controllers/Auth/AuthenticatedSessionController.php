@@ -27,7 +27,7 @@ class AuthenticatedSessionController extends Controller
     {
         $user = User::where('email', $request->email)->first();
 
-        if($user && !$user->is_enabled) {
+        if($user && $user->is_enabled!=1) {
             return redirect()->back()->with('error', 'Your account has not been activated yet');
         }
 

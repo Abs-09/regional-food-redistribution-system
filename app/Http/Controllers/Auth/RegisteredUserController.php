@@ -17,6 +17,26 @@ use Illuminate\View\View;
 class RegisteredUserController extends Controller
 {
     /**
+    * Show all users that are enabled
+    */
+    public function index(): View
+    {
+        return view('users.index');
+    }
+
+    public function show(User $user): View
+    {
+        return view('users.show', [
+            'user' => $user
+        ]);
+    }
+
+    public function requests(): View
+    {
+        return view('users.requests');
+    }
+
+    /**
      * Display the registration view.
      */
     public function create(): View
@@ -43,7 +63,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'regno' => ['required', 'string', 'max:255'],
+            'regno' => ['required', 'string', 'max:255', 'unique:' . User::class],
             'address' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
