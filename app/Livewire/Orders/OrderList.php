@@ -3,6 +3,7 @@
 namespace App\Livewire\Orders;
 
 use App\Models\Order;
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 

@@ -17,12 +17,18 @@ class Order extends Model
      */
     protected $guarded = [];
 
+    protected $casts = [
+        'created_at' => 'datetime',
+    ];
+
     //RELATIONS =======
-    public function donator() : HasOne {
+    public function donator(): HasOne
+    {
         return $this->hasOne(User::class, 'id', 'donator_id');
     }
 
-    public function distributor() : HasOne {
+    public function distributor(): HasOne
+    {
         return $this->hasOne(User::class, 'id', 'distributor_id');
     }
 }
