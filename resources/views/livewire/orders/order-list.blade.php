@@ -13,7 +13,8 @@
             </div>
             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                 <button onclick="Livewire.dispatch('openModal', { component: 'orders.add-order' })" type="button"
-                    class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Make an Order Request</button>
+                    class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Make
+                    an Order Request</button>
             </div>
         </div>
         {{-- search bar & filter --}}
@@ -84,16 +85,23 @@
                         <tbody class="divide-y divide-gray-200 bg-white">
                             @foreach ($orders as $order)
                                 <tr>
-                                    <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-0"># {{$order->id}}
+                                    <td class="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-0">#
+                                        {{ $order->id }}
                                     </td>
-                                    <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900">{{$order->created_at}}</td>
-                                    <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{$order->donator->donatorprofile?->donator_name}}</td>
-                                    <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{$order->number_of_plates}}</td>
-                                    <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{{($order->distributor_id) ? $order->distributor->name : '-'}}</td>
-                                    <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500"><x-orders.order-status :status="$order->status"/></td>
+                                    <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900">
+                                        {{ $order->created_at }}</td>
+                                    <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">
+                                        {{ $order->donator->donatorprofile?->donator_name }}</td>
+                                    <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">
+                                        {{ $order->number_of_plates }}</td>
+                                    <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-900">
+                                        {{ $order->distributor_id ? $order->distributor->name : '-' }}</td>
+                                    <td class="whitespace-nowrap px-2 py-2 text-sm text-gray-500"><x-orders.order-status
+                                            :status="$order->status" /></td>
                                     <td
                                         class="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                        <a href="{{route('orders.show', $order)}}" class="text-indigo-600 hover:text-indigo-900">View Details</a>
+                                        <a href="{{ route('orders.show', $order) }}"
+                                            class="text-indigo-600 hover:text-indigo-900">View Details</a>
                                     </td>
                                 </tr>
                             @endforeach
