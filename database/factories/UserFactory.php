@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -26,7 +27,10 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
+            'regno' => fake()->unique()->phoneNumber(),
             'address' => fake()->address(),
+            'is_enabled' => rand(0,1),
+            'type' => 'seeker',
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];

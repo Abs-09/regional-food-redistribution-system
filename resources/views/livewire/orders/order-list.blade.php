@@ -11,11 +11,13 @@
                 <h1 class="text-base font-semibold leading-6 text-gray-900">Orders</h1>
                 <p class="mt-2 text-sm text-gray-700">Manage Orders</p>
             </div>
+            @can('donator')
             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                 <button onclick="Livewire.dispatch('openModal', { component: 'orders.add-order' })" type="button"
                     class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Make
                     an Order Request</button>
             </div>
+            @endcan
         </div>
         {{-- search bar & filter --}}
         <div class="py-2 flex gap-4">

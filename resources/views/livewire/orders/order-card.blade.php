@@ -1,62 +1,12 @@
 <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <div
         class="mx-auto grid max-w-2xl grid-cols-1 grid-rows-1 items-start gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        <!-- Invoice summary -->
-        <div class="lg:col-start-3 lg:row-end-1">
-            <h2 class="sr-only">Donator Details</h2>
-            <div class="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5">
-                <dl class="flex flex-wrap">
-                    <div class="flex-auto pl-6 pt-6">
-                        <dt class="text-sm font-semibold leading-6 text-gray-900">Donator Details</dt>
-                        <dd class="mt-1 text-base font-semibold leading-6 text-gray-900">
-                            {{ $order->donator->donatorprofile->donator_name }}</dd>
-                    </div>
-                    <div class="flex-none self-end px-6 pt-4">
-                        <dt class="sr-only">Status</dt>
-                        <dd
-                            class="rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-600 ring-1 ring-inset ring-green-600/20">
-                            {{ $order->donator->donatorprofile->registration }}</dd>
-                    </div>
-                    <div class="mt-6 flex w-full flex-none gap-x-4 border-t border-gray-900/5 px-6 pt-6">
-                        <dt class="flex-none">
-                            <span class="sr-only">Client</span>
-                            <svg class="h-6 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
-                                aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A6.483 6.483 0 0010 16.5a6.483 6.483 0 004.793-2.11A5.99 5.99 0 0010 12z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </dt>
-                        <dd class="text-sm font-medium leading-6 text-gray-900">{{ $order->donator->name }}</dd>
-                    </div>
-                    <div class="mt-4 flex w-full flex-none gap-x-4 px-6">
-                        <dt class="flex-none">
-                            <span class="sr-only">Due date</span>
-                            <svg class="h-6 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
-                                aria-hidden="true">
-                                <path
-                                    d="M5.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H6a.75.75 0 01-.75-.75V12zM6 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H6zM7.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H8a.75.75 0 01-.75-.75V12zM8 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H8zM9.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V10zM10 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H10zM9.25 14a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H10a.75.75 0 01-.75-.75V14zM12 9.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V10a.75.75 0 00-.75-.75H12zM11.25 12a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75V12zM12 13.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V14a.75.75 0 00-.75-.75H12zM13.25 10a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75H14a.75.75 0 01-.75-.75V10zM14 11.25a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H14z" />
-                                <path fill-rule="evenodd"
-                                    d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </dt>
-                        <dd class="text-sm leading-6 text-gray-500">
-                            <time datetime="2023-01-31">{{ $order->donator->donatorprofile->business_address }}</time>
-                        </dd>
-                    </div>
+        <!-- Donator Profile card -->
+        <x-users.donator-card :order="$order" />
 
-                </dl>
-                <div class="mt-6 border-t border-gray-900/5 px-6 py-6">
-                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Registered and Approved by
-                        RFDS</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Invoice -->
         <div
             class="-mx-4 px-4 py-8 shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg sm:px-8 sm:pb-14 lg:col-span-2 lg:row-span-2 lg:row-end-2 xl:px-16 xl:pb-20 xl:pt-16">
+            <!-- Order details -->
             <div class="flex gap-4">
                 <h2 class="text-base font-semibold leading-6 text-gray-900">Order Details</h2>
                 <x-orders.order-status :status="$order->status" />
@@ -70,37 +20,20 @@
                     <dt class="inline text-gray-500">Created at</dt>
                     <dd class="inline text-gray-700">{{ $order->created_at }}</time></dd>
                 </div>
-                @if (auth()->user()->type == 'admin' && $order->distributor_id == null)
-                    <div class="mt-6 border-t border-gray-900 pt-6 ">
-                        <div class="bg-white shadow sm:rounded-lg">
-                            <div class="px-4 py-5 sm:p-6">
-                                <div class="flex gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="text-gray-600 w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-                                    </svg>
-                                    <dt class="font-semibold text-gray-900">Assign a Distributor</dt>
-                                </div>
-                                <div class="mt-2 max-w-xl text-sm text-gray-500">
-                                    <p>Please select a distributor to deliver this order</p>
-                                </div>
-                                <form wire:submit="assignDistributor" class="flex gap-4 mt-5 sm:flex sm:items-center">
-                                    <div>
-                                        <select wire:model="distributor_id" id="distributor_id" name="distributor_id"
-                                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                            @foreach ($distributors as $distributor)
-                                                <option value="{{ $distributor->id }}">{{ $distributor->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <button type="submit"
-                                        class="mt-3 inline-flex w-1/2 items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:ml-3 sm:mt-0 sm:w-auto">Assign</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                @else
+                <div class="mt-6 border-t border-gray-900 pt-6 ">
+                    @if (auth()->user()->type == 'admin')
+                        @if ($order->status == 'pending')
+                            {{-- Accept request card --}}
+                            <x-orders.accept-request-card :order="$order" />
+                        @elseif ($order->status == 'accepted')
+                            {{-- assign a distributor card --}}
+                            <x-orders.assign-distributor :distributors="$distributors" />
+                        @endif
+                    @endif
+                    @if (auth()->user()->type == 'distributor' && $order->status == 'pending_delivery')
+                        <x-orders.complete-order :order="$order" />
+                    @endif
+                    {{-- Assigned Distributor Card --}}
                     <div class="mt-6 border-t border-gray-900/5 pt-6 sm:pr-4">
                         <div class="flex gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -111,107 +44,100 @@
                             <dt class="font-semibold text-gray-900">Distributor Assigned</dt>
                         </div>
                         <dd class="mt-2 text-gray-500"><span
-                                class="font-medium text-gray-900">{{ $order->distributor?->name }}</span><br>{{ $order->distributor?->license }}<br>{{ $order->distributor_assigned_at }}
+                                class="font-medium text-gray-900">{{ $order->distributor?->name }}</span><br>Name:
+                            {{ $order->distributor?->license }} Time: {{ $order->distributor_assigned_at }}
                         </dd>
                     </div>
-                @endif
+                </div>
             </dl>
-            <table class="mt-16 w-full whitespace-nowrap text-left text-sm leading-6">
-                <colgroup>
-                    <col class="w-full">
-                    <col>
-                    <col>
-                    <col>
-                </colgroup>
-                <thead class="border-b border-gray-200 text-gray-900">
-                    <tr>
-                        <th scope="col" class="px-0 py-3 font-semibold">Projects</th>
-                        <th scope="col" class="hidden py-3 pl-8 pr-0 text-right font-semibold sm:table-cell">Hours
-                        </th>
-                        <th scope="col" class="hidden py-3 pl-8 pr-0 text-right font-semibold sm:table-cell">Rate
-                        </th>
-                        <th scope="col" class="py-3 pl-8 pr-0 text-right font-semibold">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b border-gray-100">
-                        <td class="max-w-0 px-0 py-5 align-top">
-                            <div class="truncate font-medium text-gray-900">Logo redesign</div>
-                            <div class="truncate text-gray-500">New logo and digital asset playbook.</div>
-                        </td>
-                        <td class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">
-                            20.0</td>
-                        <td class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">
-                            $100.00</td>
-                        <td class="py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700">$2,000.00</td>
-                    </tr>
-                    <tr class="border-b border-gray-100">
-                        <td class="max-w-0 px-0 py-5 align-top">
-                            <div class="truncate font-medium text-gray-900">Website redesign</div>
-                            <div class="truncate text-gray-500">Design and program new company website.</div>
-                        </td>
-                        <td
-                            class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">
-                            52.0</td>
-                        <td
-                            class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">
-                            $100.00</td>
-                        <td class="py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700">$5,200.00</td>
-                    </tr>
-                    <tr class="border-b border-gray-100">
-                        <td class="max-w-0 px-0 py-5 align-top">
-                            <div class="truncate font-medium text-gray-900">Business cards</div>
-                            <div class="truncate text-gray-500">Design and production of 3.5&quot; x 2.0&quot; business
-                                cards.</div>
-                        </td>
-                        <td
-                            class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">
-                            12.0</td>
-                        <td
-                            class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">
-                            $100.00</td>
-                        <td class="py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700">$1,200.00</td>
-                    </tr>
-                    <tr class="border-b border-gray-100">
-                        <td class="max-w-0 px-0 py-5 align-top">
-                            <div class="truncate font-medium text-gray-900">T-shirt design</div>
-                            <div class="truncate text-gray-500">Three t-shirt design concepts.</div>
-                        </td>
-                        <td
-                            class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">
-                            4.0</td>
-                        <td
-                            class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">
-                            $100.00</td>
-                        <td class="py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700">$400.00</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row" class="px-0 pb-0 pt-6 font-normal text-gray-700 sm:hidden">Subtotal</th>
-                        <th scope="row" colspan="3"
-                            class="hidden px-0 pb-0 pt-6 text-right font-normal text-gray-700 sm:table-cell">Subtotal
-                        </th>
-                        <td class="pb-0 pl-8 pr-0 pt-6 text-right tabular-nums text-gray-900">$8,800.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="pt-4 font-normal text-gray-700 sm:hidden">Tax</th>
-                        <th scope="row" colspan="3"
-                            class="hidden pt-4 text-right font-normal text-gray-700 sm:table-cell">Tax</th>
-                        <td class="pb-0 pl-8 pr-0 pt-4 text-right tabular-nums text-gray-900">$1,760.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="pt-4 font-semibold text-gray-900 sm:hidden">Total</th>
-                        <th scope="row" colspan="3"
-                            class="hidden pt-4 text-right font-semibold text-gray-900 sm:table-cell">Total</th>
-                        <td class="pb-0 pl-8 pr-0 pt-4 text-right font-semibold tabular-nums text-gray-900">$10,560.00
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+            {{-- plate card --}}
+            <div class="flex gap-3 py-4 text-gray-500">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                    </svg>
+                </div>
+                <div>
+                    Number of plates assigned: {{ $order->seekers->count() }} / {{ $order->number_of_plates }}
+                </div>
+            </div>
+
+            {{-- Assign seeker button --}}
+            @if (auth()->user()->type == 'admin' && $order->status == 'accepted')
+                <div class="py-6 flex items-center">
+                    <div class="mt-4 sm:flex-none">
+                        <button
+                            onclick="Livewire.dispatch('openModal', { component: 'orders.assign-seeker', arguments: { order: {{ $order->id }} } })"
+                            type="button"
+                            class="block rounded-md bg-orange-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Assign
+                            Seekers</button>
+                    </div>
+                </div>
+            @endif
+            @if ($orderseekers->isEmpty())
+                <div
+                    class="relative block w-full rounded-lg border-2 border-dashed border-gray-300 p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none"
+                        viewBox="0 0 48 48" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 14v20c0 4.418 7.163 8 16 8 1.381 0 2.721-.087 4-.252M8 14c0 4.418 7.163 8 16 8s16-3.582 16-8M8 14c0-4.418 7.163-8 16-8s16 3.582 16 8m0 0v14m0-4c0 4.418-7.163 8-16 8S8 28.418 8 24m32 10v6m0 0v6m0-6h6m-6 0h-6" />
+                    </svg>
+                    <span class="mt-2 block text-sm font-semibold text-gray-900">There are no seekers assigned to this
+                        order</span>
+                </div>
+            @else
+                @if (session()->has('assign-message'))
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+                        role="alert">
+                        <span class="block sm:inline">{{ session('assign-message') }}</span>
+                    </div>
+                @endif
+                {{-- Seeker details --}}
+                <table class="mt-4 w-full whitespace-nowrap text-left text-sm leading-6">
+                    <colgroup>
+                        <col class="w-full">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="border-b border-gray-200 text-gray-900">
+                        <tr>
+                            <th scope="col" class="px-0 py-3 font-semibold">To be delivered to</th>
+                            <th scope="col" class="hidden py-3 pl-8 pr-0 text-right font-semibold sm:table-cell">
+                                Delivery Address
+                            </th>
+                            <th scope="col" class="hidden py-3 pl-8 pr-0 text-right font-semibold sm:table-cell">
+                                Number of Plates
+                            </th>
+                            <th scope="col" class="py-3 pl-8 pr-0 text-right font-semibold">Deadline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($orderseekers as $orderseeker)
+                            <tr class="border-b border-gray-100">
+                                <td class="max-w-0 px-0 py-5 align-top">
+                                    <div class="truncate font-medium text-gray-900">{{ $orderseeker->user?->name }}
+                                    </div>
+                                    <div class="truncate text-gray-500">{{ $orderseeker->user?->regno }}</div>
+                                </td>
+                                <td
+                                    class="hidden py-5 pl-8 pr-0 text-wrap text-right align-top text-gray-700 sm:table-cell">
+                                    {{ $orderseeker->user?->address }}</td>
+                                <td
+                                    class="hidden py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700 sm:table-cell">
+                                    1</td>
+                                <td class="py-5 pl-8 pr-0 text-right align-top tabular-nums text-gray-700">
+                                    {{ $order->created_at->format('Y-m-d') }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @endif
         </div>
 
-        <div class="lg:col-start-3">
+        {{-- <div class="lg:col-start-3">
             <!-- Activity feed -->
             <h2 class="text-sm font-semibold leading-6 text-gray-900">Activity</h2>
             <ul role="list" class="mt-6 space-y-6">
@@ -507,6 +433,6 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

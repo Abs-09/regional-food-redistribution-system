@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('seeker_id');
             $table->foreignId('order_id');
-            $table->string('delivered_date');
+            $table->string('delivered_date')->nullable();
             $table->timestamps();
         });
     }

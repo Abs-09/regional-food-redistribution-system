@@ -93,6 +93,9 @@
                     </div>
                 </li>
             @endforeach
+            <div dir="ltr" class="font-sans m-10">
+                {{ $users->links() }}
+            </div>
         </ul>
     </div>
 
