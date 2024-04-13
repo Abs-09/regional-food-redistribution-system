@@ -29,6 +29,14 @@ class OrderList extends Component
             $orders = Order::where('distributor_id', $user->id)->where('created_at', 'like', '%' . $this->search . '%')->when($this->filter,  function ($query, $filter) {
                 return $query->where('status', $filter);
             })->latest()->paginate(9);
+        } elseif ($user->type == 'seeker') {
+            $orders = Order::whereHas('seekers', function ($query) use($user) {
+                $query->where('seeker_id', $user->id);
+            })
+            ->where('created_at', 'like', '%' . $this->search . '%')
+            ->when($this->filter,  function ($query, $filter) {
+                return $query->where('status', $filter);
+            })->latest()->paginate(9);
         }
 
 

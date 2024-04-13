@@ -67,7 +67,7 @@ $this->order->status = 'failed';
     {
 
         return view('livewire.orders.order-card', [
-            'distributors' => User::where('type', 'distributor')->get(),
+            'distributors' => User::where('type', 'distributor')->where('is_enabled', 1)->get(),
             'seekers' => User::where('type', 'seeker')->where('is_enabled', 1)->get(),
             'orderseekers' => OrderSeeker::where('order_id', $this->order->id)->get()
         ]);

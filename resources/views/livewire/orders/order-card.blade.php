@@ -94,6 +94,7 @@
                         <span class="block sm:inline">{{ session('assign-message') }}</span>
                     </div>
                 @endif
+                @if(auth()->user()->type != 'seeker')
                 {{-- Seeker details --}}
                 <table class="mt-4 w-full whitespace-nowrap text-left text-sm leading-6">
                     <colgroup>
@@ -134,6 +135,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                @endif
             @endif
         </div>
 
